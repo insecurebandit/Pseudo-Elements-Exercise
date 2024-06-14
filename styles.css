@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#d8d0d0 1.10rem, #030303 1.2rem);
+  background-size: 100% 1.2rem;
+}
+
+header {
+  height: 4.5rem;
+  color: #817e7e;
+  background-color: #191a1a;
+}
+
+header h1 {
+  font-size: 2rem;
+  padding: 1.2rem 0 0 1.5rem;
+}
+
+.introParagraph {
+  margin: 1.5rem 0 1.5rem 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ! HEADER ANIMATIONS ! */
+
+.mainContainer .mainHeader::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+  animation-iteration-count: infinite;
+}
+
+.mainContainer .mainHeader::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+.mainContainer .mainHeader::before {
+  content: "";
+  position: absolute;
+  left: -200%;
+  width: 400%;
+  height: 20%;
+  animation: animStar 60s linear infinite;
+  animation-iteration-count: infinite;
+}
+
+.mainContainer .mainHeader::before {
+  background-image: radial-gradient(#d8d0d0 1px, transparent 1%);
+  background-size: 30px 30px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  0% {
+    transform: translate(100, 50);
+  }
+  100% {
+    transform: translate(30%, 0);
+  }
+}
+
+/* ! BUTTON ANIMATIONS ! */
+
+.secondaryContainer .button {
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  font-weight: bold;
+  --color: #e1e1e1;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+  transition: all 0.8s ease-in-out;
+}
+
+.secondaryContainer .button:hover {
+  cursor: pointer;
+  color: #ccc;
+  font-weight: bold;
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+}
+
+.secondaryContainer .button:active {
+  background: #191a1a !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.secondaryContainer .button:active::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ccc 10%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #191a1a 20%);
+  background-size: 30px 30px;
+  animation: moveBackground 6s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20%, 20%);
+  }
+}
